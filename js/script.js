@@ -43,6 +43,17 @@ let PLATFORM_DATA = {
         name: "OpenAI",
         endpoint: "https://api.openai.com/v1/chat/completions"
     },
+    groq: {
+        models: [
+            "qwen-qwq-32b",
+            "deepseek-r1-distill-llama-70b",
+            "llama-3.3-70b-versatile",
+            "llama-3.2-90b-vision-preview",
+            "llama-3.3-70b-specdec",
+        ],
+        name: "Groq",
+        endpoint: "https://api.groq.com/openai/v1/chat/completions"
+    },
     google: {
         models: [
             "gemini-2.0-pro-exp-02-05",
@@ -81,16 +92,6 @@ let PLATFORM_DATA = {
         ],
         name: "Cohere",
         endpoint: "https://api.cohere.com/v2/chat"
-    },
-    groq: {
-        models: [
-            "deepseek-r1-distill-llama-70b",
-            "llama-3.3-70b-versatile",
-            "llama-3.2-90b-vision-preview",
-            "llama-3.3-70b-specdec",
-        ],
-        name: "Groq",
-        endpoint: "https://api.groq.com/openai/v1/chat/completions"
     },
     openrouter: {
         models: [
