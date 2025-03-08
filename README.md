@@ -2,7 +2,7 @@
 Orion is a web-based chat interface that simplifies interactions with multiple AI model providers.
 It provides a unified platform for chatting and exploring multiple large language models (LLMs), including:
 
-- 🛠️ Ollama – An open-source tool for running LLMs locally 🏡
+- 💚 Ollama – An open-source tool for running LLMs locally 🏡
 - 🐳 DeepSeek (DeepSeek-R1 rivaling OpenAI's o1 model)
 - 🤖 OpenAI (GPTs and o's models)
 - 🎯 Cohere (Command-r models)
@@ -67,17 +67,29 @@ Some companies offer free API access. Check their terms and conditions before yo
 # Special Commands
 Use special commands to perform an action quickly and easily.
 
+###  Grounding with Google Search 
+- `g: what's the main news today`
+
+The Grounding with Google Search feature in the Gemini API can be used to improve the accuracy and recency of the model's 
+responses, essentially an internal RAG within the Gemini API itself.
+
+You can now use this feature when using any Gemini 2.0 model, whether flash or pro, simply by typing `g: + your prompt.`
+
+
 ### Deep Thinking
+- ``dt: Explain quantum entanglement``
+
 Claude 3.7 Sonnet is a hybrid model capable of "standard thinking" and "extended thinking".
 
-When you want to use this model's **d**eep **t**hinking, simply type ``dt: `` before your prompt.
+When you want to use this model's **d**eep **t**hinking, simply type ``dt: + your prompt``.
 
-Example: ``dt: Explain quantum entanglement``.
 
 This will give you easy control in switching between the two modes.
 
 
 ### Translation
+- ``t:spanish Hello everyone!``
+
 **Translate:** Translate text with ease using special command.
 - To translate "Hello everyone!" into Spanish, use: `translate:spanish Hello everyone!` or its short form `t:spanish Hello everyone!`.
 - AI will automatically detect the source language, requiring only the target language specification.
@@ -122,7 +134,10 @@ If you do, just access the directory where the project was saved. It's that simp
 
 
 # Google CSE API Key
+*This will be useful when you are not using Google's Gemini models, as the ``g:`` command will not work.
+
 Sometimes you might want AI to search the web and respond based on that information.
+
 
 To allow AI to search using Google, you will need Google CSE (Custom Search Engine) API Key and CX.
 - First, create a custom search here [Google CSE Panel](https://programmablesearchengine.google.com/controlpanel/all)
