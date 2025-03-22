@@ -84,6 +84,7 @@ let PLATFORM_DATA = {
     },
     cohere: {
         models: [
+            "command-a-03-2025",
             "command-r-plus-08-2024",
             "command-r-plus-04-2024",
             "c4ai-aya-expanse-32b",
