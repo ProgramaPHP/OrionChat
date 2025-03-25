@@ -120,6 +120,13 @@ let PLATFORM_DATA = {
         name: "Cerebras",
         endpoint: "https://api.cerebras.ai/v1/chat/completions"
     },
+    hyperbolic: {
+        models: [
+            "deepseek-ai/DeepSeek-V3-0324"
+        ],
+        name: "Hyperbolic",
+        endpoint: "https://api.hyperbolic.xyz/v1/chat/completions"
+    },
     xai: {
         models: [
             "grok-beta"
