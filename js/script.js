@@ -722,6 +722,7 @@ function removeLastMessage(from_user = true) {
 let chatButton = document.querySelector("#send");
 let chat_textarea = document.querySelector(".chat-input textarea");
 let voice_rec = document.getElementById('voice_rec');
+let wrap_rec_and_up = document.querySelector(".wrap_rec_and_up");
 
 function toggleBtnOptions() {
     // when not fired by addEventListener
@@ -773,8 +774,21 @@ function startChat() {
 chatButton.onclick = () => {
     startChat();
 }
+
+
+let base_textarea_height = 50;
 chat_textarea.onkeyup = (event) => {
+    let total_lines = chat_textarea.value.match(/\n/g)?.length ?? 0;
+        let new_pxl = total_lines * 10;
+        if(new_pxl > 50){
+            new_pxl = 50
+        }
+        let new_textarea_height = base_textarea_height + new_pxl;
+        chat_textarea.style.height = `${new_textarea_height}px`;
+        wrap_rec_and_up.style.height = `${new_textarea_height}px`;
     if (event.key === 'Enter' && !event.shiftKey) {
+        chat_textarea.style.height = `${base_textarea_height}px`;
+        wrap_rec_and_up.style.height = `${base_textarea_height}px`;
         startChat();
     }
 }
