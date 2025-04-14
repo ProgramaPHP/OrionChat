@@ -34,11 +34,12 @@ let converter = new showdown.Converter();
 let PLATFORM_DATA = {
     openai: {
         models: [
-            "gpt-4o",
-            "gpt-4o-mini",
-            "o1-preview",
+            "gpt-4.1",
+            "gpt‑4.1-mini",
+            "gpt‑4.1-nano",
+            "o1",
             "o1-mini",
-            "gpt-4.5-preview"
+            "o3-mini"
         ],
         name: "OpenAI",
         endpoint: "https://api.openai.com/v1/chat/completions"
