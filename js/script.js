@@ -35,8 +35,8 @@ let PLATFORM_DATA = {
     openai: {
         models: [
             "gpt-4.1",
-            "gpt‑4.1-mini",
-            "gpt‑4.1-nano",
+            "gpt-4.1-mini",
+            "gpt-4.1-nano",
             "o1",
             "o1-mini",
             "o3-mini"
