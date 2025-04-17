@@ -3220,7 +3220,10 @@ function unlockScroll() {
         //  chat_msg.addEventListener("keydown", (event) => {
         window.addEventListener("keydown", (event) => {
             if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
-                return; // focus is in input or textarea
+                if(document.activeElement.value !== ''){
+                    return;
+                }
+
             }
             if (event.key === "ArrowDown") {
                 if (chat_msg.scrollTop <= last_position) {
