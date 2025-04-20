@@ -24,7 +24,7 @@ It provides a unified platform for chatting and exploring multiple large languag
 
 **Dark Theme:** 
 
-![Orion Screenshot](imgs/screenshot_dark_theme.png "Orion Screenshot - Dark Theme")
+![Orion Screenshot](imgs/screenshot_dark_theme.jpg "Orion Screenshot - Dark Theme")
 
 
 With Orion, you can easily navigate and assess the strengths and limitations of different AI models through an intuitive,
