@@ -32,7 +32,7 @@ user-friendly interface.
 
 ## Key Features
 
-- 🖥️ Browser - No need to download anything ⚡️
+- 🖥️ [Browser](https://eliaspereirah.github.io/OrionChat/) - No need to download anything ⚡️
 - ✅ Code Execution (Execute code with Google Gemini)
 - 🗣️ TTS - Realistic text-to-speech using ElevenLabs
 - 🎙️ STT - Speech-to-Text using Groq/Whisper ️
@@ -122,9 +122,16 @@ Please perform this functionality with caution and always check code before acce
 What percentage is that?`
 
 # How to Run
-To run Orion first download this repository.
 
-You can download it by running the following command in your terminal:
+If you prefer, you can use OrionChat via GitHub Pages, this is the easiest way and there's no need to download or clone this repository.
+
+Just visit https://eliaspereirah.github.io/OrionChat/
+
+## Run locally
+
+If you want to run OrionChat locally first clone this repository.
+
+You can clone it by running the following command in your terminal:
 
 ```bash
 git clone https://github.com/EliasPereirah/OrionChat.git
@@ -132,7 +139,7 @@ git clone https://github.com/EliasPereirah/OrionChat.git
 Or download the zip file from the repository by clicking on the green button "Code" and then [Download ZIP](https://github.com/EliasPereirah/OrionChat/archive/refs/heads/master.zip).
 
 After downloading, just open the folder and click on index.html if you don't have a server.
-If you do, just access the directory where the project was saved. It's that simple.
+If you do, just access the directory where the project was saved, eg: http://localhost/OrionChat/. It's that simple.
 
 
 # Google CSE API Key
