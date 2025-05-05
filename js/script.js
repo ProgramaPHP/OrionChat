@@ -208,7 +208,7 @@ let settings = document.querySelector("#settings");
 settings.onclick = () => {
     let conversations = document.querySelector(".conversations");
     conversations.style.display = 'block';
-    //localStorage.setItem("hide_conversations", '0');
+    localStorage.setItem("hide_conversations", '0');
     let hasTopic = document.querySelector(".conversations .topic");
     if (!hasTopic) {
         let ele = document.createElement('div');
@@ -242,7 +242,7 @@ new_chat.addEventListener('click', () => {
 jsClose = document.querySelector(".jsClose");
 jsClose.onclick = () => {
     document.querySelector('.conversations').style.display = 'none';
-    //localStorage.setItem("hide_conversations", '1');
+    localStorage.setItem("hide_conversations", '1');
 }
 
 
@@ -1826,10 +1826,10 @@ function saveModel() {
 
 let hc = localStorage.getItem("hide_conversations");
 if (hc === '1') {
-    //  document.querySelector('.conversations').style.display = 'none';
+      document.querySelector('.conversations').style.display = 'none';
 } else {
     if (!is_mobile) {
-        //  document.querySelector('.conversations').style.display = 'block';
+          document.querySelector('.conversations').style.display = 'block';
     }
 }
 
