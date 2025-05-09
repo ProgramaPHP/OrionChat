@@ -376,9 +376,14 @@ function getPreviousChatTopic() {
         total_chats++;
     })
 
+    let tmp_div = document.createElement('div');
+
     all_keys.forEach(id => {
         try {
             let topic = JSON.parse(localStorage.getItem(id))?.messages?.[0]?.content ?? '';
+            tmp_div.innerHTML = topic;
+            tmp_div.querySelector("details")?.remove();
+            topic = tmp_div.innerText.trim();
             let last_interaction = JSON.parse(localStorage.getItem(id))?.last_interact ?? id;
             if (topic) {
                 all_topics.push({'topic': topic, 'id': id, 'last_interaction': last_interaction});
