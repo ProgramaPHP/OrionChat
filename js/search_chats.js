@@ -58,6 +58,7 @@ function getAllChats() {
 
 
 function searchPastChats(query) {
+    query = query.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     query = query.trim();
     let original_query = query;
     if (query === "") {
@@ -84,14 +85,19 @@ function searchPastChats(query) {
         let matchesInChatCount = 0;
         let first_msg = '';
         chat.msg.forEach(msg => {
-            if (msg.role === 'user') {
-                const cnt = msg.content.trim();
-                if (first_msg === '') {
-                    first_msg = cnt;
-                }
-                if (cnt) {
-                    const currentMatches = cnt.match(regex);
-                    if (currentMatches) {
+            let cnt = msg.content.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+            if (first_msg === '') {
+                first_msg = msg.content;
+            }
+            if (cnt) {
+                const currentMatches = cnt.match(regex);
+                if (currentMatches) {
+                    if (msg.role === 'user') {
+                        matchesInChatCount += (currentMatches.length + 15);
+                        if(first_msg !== ''){
+                            matchesInChatCount += 30;
+                        }
+                    }else {
                         matchesInChatCount += currentMatches.length;
                     }
                 }
