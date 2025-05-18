@@ -783,12 +783,12 @@ chatButton.onclick = () => {
 }
 
 
-let base_textarea_height = 50;
+let base_textarea_height = 70;
 chat_textarea.onkeyup = (event) => {
     let total_lines = chat_textarea.value.match(/\n/g)?.length ?? 0;
         let new_pxl = total_lines * 10;
-        if(new_pxl > 50){
-            new_pxl = 50
+        if(new_pxl > 70){
+            new_pxl = 70
         }
         let new_textarea_height = base_textarea_height + new_pxl;
         chat_textarea.style.height = `${new_textarea_height}px`;

@@ -1122,15 +1122,15 @@ select {
 .chat-input textarea {
     overflow: hidden;
     resize: none;
-    padding: 16px 14px;
+    padding: 28px 14px;
     color: var(--textarea-color);
     border: 1px solid var(--textarea-border);
     display: block;
     width: 70%;
     float: left;
-    border-bottom-left-radius: 24px;
-    border-top-left-radius: 24px;
-    height: 50px;
+    border-bottom-left-radius: 33px;
+    border-top-left-radius: 33px;
+    height: 70px;
     box-sizing: border-box;
     border-right: none !important;
     font-weight: 600;
@@ -1180,10 +1180,11 @@ textarea#ta_chat::placeholder {
 .wrap_rec_and_up {
     border: 1px solid var(--textarea-border);
     float: left;
+    padding: 10px 4px;
     border-left: none;
-    border-bottom-right-radius: 24px;
-    border-top-right-radius: 24px;
-    height: 50px;
+    border-bottom-right-radius: 33px;
+    border-top-right-radius: 33px;
+    height: 70px;
     box-sizing: border-box;
     background-color: var(--textarea-bg);
 }
