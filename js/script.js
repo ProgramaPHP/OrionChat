@@ -1,5 +1,5 @@
 let can_delete_history = false;
-let max_chats_history = 898;
+let max_chats_history = 512;
 let chosen_platform = localStorage.getItem('chosen_platform');
 let model = localStorage.getItem('selected_model');
 let is_mobile = window.matchMedia("(max-width: 768px)").matches;
@@ -346,8 +346,15 @@ function addConversation(role, content, add_to_document = true, do_scroll = true
 
 
 function saveLocalHistory() {
-    localStorage.setItem(chat_id.toString(), JSON.stringify(conversations));
-    loadOldChatTopics();
+   try {
+       localStorage.setItem(chat_id.toString(), JSON.stringify(conversations));
+   }catch (e) {
+       if (e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED'){
+           addWarning('Your browser has reached the maximum number of items allowed for local storage.' +
+               ' Please clear out some old chats to free up space.', false);
+       }
+   }
+   loadOldChatTopics();
 }
 
 function getPreviousChatTopic() {
@@ -467,6 +474,8 @@ function removeChat(div, id, force = false) {
  **/
 function newChat() {
     //toggleAnimation(true);
+
+
     is_chat_enabled = true;
     toggleAiGenAnimation(false);
     closeDialogs();
@@ -692,6 +701,7 @@ async function changeUserInputIfNeeded() {
 
 }
 
+
 function chat() {
     toggleAiGenAnimation(true);
     changeUserInputIfNeeded().then(() => {
@@ -761,6 +771,11 @@ voice_rec.addEventListener('click', () => {
 
 
 function startChat() {
+
+    document.querySelector(".message.user img")?.remove();
+    document.querySelector(".message.user video")?.remove();
+    document.querySelector(".message.user audio")?.remove();
+
     stopRecorder();
     if (!is_chat_enabled) {
         //addWarning('Chat is busy. Please wait!');

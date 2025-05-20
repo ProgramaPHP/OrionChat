@@ -121,6 +121,20 @@ Please perform this functionality with caution and always check code before acce
 - Another example: `py: The United States has a population of 342,524,968, of which 480,000 die annually due to tobacco use. 
 What percentage is that?`
 
+# Some Observations
+### About images/videos/PDFs 
+When you upload an image, video, or PDF to Orion Chat, it isn’t stored locally.
+You’ll need to re-upload it each time you want the AI to use it as context. 
+Otherwise, asking about it may cause the AI to hallucinate. 
+
+The upside is better token efficiency.
+
+### Old chats
+Orion will automatically delete older chats when the number of chats exceeds 512, so the maximum chat history will be 512.
+
+The reason for this is to prevent local memory from becoming too full.
+
+
 # How to Run
 
 If you prefer, you can use OrionChat via GitHub Pages, this is the easiest way and there's no need to download or clone this repository.
