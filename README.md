@@ -1,5 +1,5 @@
-# Orion
-Orion is a web-based chat interface that simplifies interactions with multiple AI model providers.
+# OrionChat
+OrionChat is a web-based chat interface that simplifies interactions with multiple AI model providers.
 It provides a unified platform for chatting and exploring multiple large language models (LLMs), including:
 
 - 🌐 OpenAI (GPTs and beyond)
@@ -20,11 +20,11 @@ It provides a unified platform for chatting and exploring multiple large languag
 ## Screenshot
 - **Light theme:**
 
-![Orion Screenshot](imgs/screenshot.png "Orion Screenshot")
+![OrionChat Screenshot](imgs/screenshot.png "OrionChat Screenshot")
 
 **Dark Theme:** 
 
-![Orion Screenshot](imgs/screenshot_dark_theme.jpg "Orion Screenshot - Dark Theme")
+![OrionChat Screenshot](imgs/screenshot_dark_theme.jpg "OrionChat Screenshot - Dark Theme")
 
 
 With Orion, you can easily navigate and assess the strengths and limitations of different AI models through an intuitive,
@@ -123,7 +123,7 @@ What percentage is that?`
 
 # Some Observations
 ### About images/videos/PDFs 
-When you upload an image, video, or PDF to Orion Chat, it isn’t stored locally.
+When you upload an image, video, or PDF to OrionChat, it isn’t stored locally.
 You’ll need to re-upload it each time you want the AI to use it as context. 
 Otherwise, asking about it may cause the AI to hallucinate. 
 
@@ -176,7 +176,7 @@ For better search results, you can configure a "RAG endpoint".
 
 Just follow the instructions at https://github.com/EliasPereirah/SearchAugmentedLLM/
 
-After that you can enter the search endpoint you just created in the Orion Chat interface.
+After that you can enter the search endpoint you just created in the OrionChat interface.
 Click on "Options" -> "Advanced" enter the "RAG endpoint" and click "Activate".
 
 Now whenever you want the AI to do a search to answer your question, write at the beginning of your prompt
