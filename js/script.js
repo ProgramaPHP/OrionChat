@@ -57,11 +57,10 @@ let PLATFORM_DATA = {
     },
     google: {
         models: [
-            "gemini-2.5-pro-exp-03-25",
-            "gemini-2.0-pro-exp-02-05",
+            "gemini-2.5-pro-preview-05-06",
+            "gemini-2.5-flash-preview-05-20",
             "gemini-1.5-pro",
-            "gemini-2.0-flash",
-            "gemini-2.0-flash-thinking-exp-01-21"
+            "gemma-3n-e4b-it"
         ],
         name: "Google",
         endpoint: 'https://generativelanguage.googleapis.com/v1beta/models/{{model}}:{{gen_mode}}?key={{api_key}}'
@@ -1176,6 +1175,11 @@ function geminiChat(fileUri = '', with_stream = true, the_data = '') {
         // "topP": 0.95,
         // "maxOutputTokens": 8192,
     };
+
+    let pog = whichTool(last_user_input);
+    if(pog === 'dt'){
+        data.generationConfig.thinkingConfig =  { thinkingBudget: 8000 };
+    }
 
     if (the_data) {
         data = the_data;

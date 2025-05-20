@@ -86,6 +86,8 @@ Claude 3.7 Sonnet is a hybrid model capable of "standard thinking" and "extended
 
 When you want to use this model's **d**eep **t**hinking, simply type ``dt: + your prompt``.
 
+The same command will work for Gemini models with optional "thinking mode" support like gemini-2.5-flash-preview-04-17
+
 
 This will give you easy control in switching between the two modes.
 
