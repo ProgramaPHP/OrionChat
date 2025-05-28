@@ -24,7 +24,7 @@ let all_chunks = [];
 let has_chunk_error = false;
 let grounding_rendered_cnt = '';
 let proxy_url = window.location.origin + window.location.pathname + "cors-proxy.php";
-
+let dispatcher = 'user';
 // Markdown to HTML
 showdown.setFlavor('github');
 showdown.setOption('ghMentions', false); // if true "@something" became github.com/something
@@ -1141,6 +1141,12 @@ function geminiChat(fileUri = '', with_stream = true, the_data = '') {
     }
 
     last_user_input = conversations.messages[conversations.messages.length - 1].content;
+    let allow_tool_use = true;
+    if(dispatcher !== 'user'){
+        allow_tool_use = false;
+        dispatcher = 'user';
+        last_user_input = '';
+    }
     let cmd = commandManager(last_user_input)
     if (cmd) {
         let last_part = data.contents[0].pop();
@@ -1200,17 +1206,20 @@ function geminiChat(fileUri = '', with_stream = true, the_data = '') {
     }
 
     if (!data.tools) {
-        if (last_user_input.match(/^py:|python:/i)) {
+        if (last_user_input.match(/^py:|^python:/i)) {
             // code execution command
             data.tools = [{'code_execution': {}}];
         }
         if (last_user_input.match(/^g:/i)) {
-            // Grounding With Google Search
-            if(!model.match(/^gemini-1/)){
-                data.tools = [{'google_search': {}}];
-            }else {
-                addWarning("Please use gemini 2.0 for grounding with google search!", false)
-            }
+            // Grounding with Google Search
+            data.tools = [{'google_search': {}}];
+            /*
+             if(!model.match(/^gemini-1/)){
+             data.tools = [{'google_search': {}}];
+             }else {
+             addWarning("Please use Gemini compatible models for grounding with Google Search!", false)
+             }
+             */
 
         }
 
@@ -1218,13 +1227,10 @@ function geminiChat(fileUri = '', with_stream = true, the_data = '') {
     }
 
 
-
-
     if (with_stream) {
-        return geminiStreamChat(fileUri, data);
+        return geminiStreamChat(fileUri, data, allow_tool_use);
     }
 
-//    let endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${{model}}:generateContent?key=${{api_key}}`
     let gemini_endpoint = endpoint.replaceAll("{{model}}", model);
     gemini_endpoint = gemini_endpoint.replaceAll("{{api_key}}", api_key);
     gemini_endpoint = gemini_endpoint.replaceAll("{{gen_mode}}", "generateContent");
@@ -2052,6 +2058,7 @@ function commandManager(input_text) {
 
 
 async function youtubeCaption(data) {
+    dispatcher = 'system';
     let video_title = '';
     let yt_down_caption_endpoint = localStorage.getItem("yt_down_caption_endpoint") ?? ''
     if (!yt_down_caption_endpoint) {
@@ -2665,16 +2672,15 @@ async function geminiUploadImage() {
 }
 
 
-async function geminiStreamChat(fileUri, data) {
+async function geminiStreamChat(fileUri, data, allow_tool_use = true) {
     last_user_input = conversations.messages[conversations.messages.length - 1].content;
-    if (needToolUse(last_user_input)) {
+
+    if (allow_tool_use && needToolUse(last_user_input)) {
         let tool_name = whichTool(last_user_input);
         let tool_compatibility = `google_compatible`;
         let the_tool = tools_list[tool_compatibility]?.[tool_name] ?? '';
         if (the_tool) {
             geminiChat(fileUri, false)
-        } else {
-            console.log('has not tool')
         }
     }
     // const endpoint_stream = `https://generativelanguage.googleapis.com/v1beta/models/${{model}}:streamGenerateContent?alt=sse&key=${{api_key}}`;
