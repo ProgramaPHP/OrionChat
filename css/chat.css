@@ -669,6 +669,39 @@ th {
     box-shadow: none;
 }
 
+.nuggets_dialog .dialog_close::after {
+    right: 5px !important;
+    top: 3px !important;
+    transform: rotate(0deg) !important;
+    background-color: #3a3b3e !important;
+    border-color: #626678 !important;
+}
+
+.nuggets_dialog {
+    background-color: #101218;
+    color: #c0c0c0;
+    padding-top: 2px;
+    border: 3px solid #3d3d3d;
+    border-radius: 4px;
+    line-height: 27px;
+    box-shadow: none !important;
+    width: 750px;
+    min-height: 33vh;
+    max-height: 97vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 1.035em;
+}
+
+.nuggets_dialog .p_big {
+    color: #646865;
+    padding: 0;
+    margin: 12px;
+    font-size: 1.33em;
+    font-family: math, sans-serif;
+}
+
+
 .setApiDialog {
     padding: 25px 16px 33px;
     text-align: center;
@@ -692,6 +725,45 @@ th {
     font-weight: normal;
     transition: background-color 0ms, color 0ms, border 500ms, font-weight 500ms;
 }
+
+.dialog button.btn_new {
+    border-radius: 16px !important;
+    animation: shake 2s infinite ease-in-out;
+    transform-origin: center;
+    background-color: #07d95e !important;
+    color: #000000 !important;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-2px);
+    }
+    40% {
+        transform: translateX(2px);
+    }
+    60% {
+        transform: translateX(-2px);
+    }
+    80% {
+        transform: translateX(2px);
+    }
+}
+
+
+.nuggets_dialog .discreet_button {
+    color: #787878;
+    background-color: transparent;
+    border-left: 1px solid #434242;
+    border-right: 1px solid #434242;
+    border-radius: 11px;
+    border-top: 1px dashed #434242;
+    border-bottom: 1px dashed #434242;
+    padding: 3px 5px;
+}
+
 
 [data-theme=dark] .save_prompt,
 [data-theme=dark] .save_model,
@@ -982,7 +1054,8 @@ select {
     background-color: var(--result-item-bg);
     border-radius: 5px;
 }
-.search_results .dialog_close:after{
+
+.search_results .dialog_close:after {
     top: 8px;
     right: 8px;
 }
@@ -995,7 +1068,7 @@ select {
     text-decoration: underline;
 }
 
-.search_header{
+.search_header {
     color: var(--search-header-cl);
 }
 
