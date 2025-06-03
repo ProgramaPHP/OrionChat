@@ -45,9 +45,8 @@ user-friendly interface.
 - 📁 Upload a variety of documents (text, PDF, images, video) to Google Gemini for analysis and processing
 - 🧠 Awesome Prompts 150+ awesome prompts most of them from [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts) to select with one click.
 
-###### \#### Show your support for this project \####
-<a href="https://www.buymeacoffee.com/eliaspereirah"><img src="https://img.buymeacoffee.com/button-api/?text=1 Dolar is All you Need&emoji=💵&slug=eliaspereirah&button_colour=FFDD00&font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff" /></a>
 ###### \### Help the project by giving a star. \###
+
 
 ## API Key Management
 
@@ -202,6 +201,4 @@ You can run it on localhost or on a remote server.
 
 After activating the mentioned project, go to "Options" -> "YouTube Captions" and point to the URL where you deployed the project, for example: http://localhost/YoutubeSubtitlesDownloader/
 
-
-
-<a href="https://www.buymeacoffee.com/eliaspereirah"><img src="https://img.buymeacoffee.com/button-api/?text=tools.buyCoffee()&emoji=🍓&slug=eliaspereirah&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" /></a>
+###### \### Help the project by giving a star. \###
