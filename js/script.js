@@ -412,6 +412,10 @@ function removeChat(div, id, force = false) {
             if (tot_msgs < 19) {
                 localStorage.removeItem(id);
             } else {
+                let old_delete_warning = document.querySelector(".del_caution");
+                if (old_delete_warning) {
+                    old_delete_warning.remove();
+                }
                 let alert_msg =
                     `<p>Are you sure you want to delete?</p>
                     <p>This conversation has ${tot_msgs} messages.</p>

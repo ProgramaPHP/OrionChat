@@ -583,7 +583,7 @@ code.hljs::-webkit-scrollbar-track {
     font-family: sans-serif;
     justify-content: center;
     align-items: center;
-    min-height: 100dvh;
+    height: 100dvh;
     margin: 0;
     display: flex;
 }
@@ -845,7 +845,7 @@ html[data-theme="dark"] #settings {
 .chat {
     border-radius: 5px;
     padding: 20px;
-    box-shadow: 0 2px 5px var(--chat-bs-color);
+    /**  box-shadow: 0 2px 5px var(--chat-bs-color); **/
     width: 60%;
     margin: 0 20%;
 }
@@ -1701,6 +1701,9 @@ pre:has(code):before {
         margin: 0;
     }
 
+    .container {
+        height: 94dvh;
+    }
     .search_results {
         width: 95%;
         margin: 15px 2.5%;
@@ -1733,7 +1736,7 @@ pre:has(code):before {
         width: 30%;
     }
 
-    #voice_rec {
+    #voice_rec,#send {
         width: 40px;
         height: 40px;
     }
